@@ -62,7 +62,8 @@ export default {
   }),
 };
 </script>
-<style>.fixedButton {
+<style>
+.fixedButton {
   bottom: 1rem;
   right: 2rem;
 }
@@ -73,4 +74,5 @@ export default {
     bottom: 0.5rem;
     right: 0;
   }
-}</style>
+}
+</style>

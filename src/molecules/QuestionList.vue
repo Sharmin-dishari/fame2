@@ -1,7 +1,9 @@
 <template>
-<q-scroll-area :vertical-thumb-style="thumbStyle" 
-      :style="calculatedHeight" class="scroll-border q-ma-xl">
-    <q-list separator class="q-px-md q-pb-xl">
+  <q-scroll-area :vertical-thumb-style="thumbStyle"
+    :style="calculatedHeight"
+    class="scroll-border">
+    <q-list separator
+      class="q-px-md q-pb-xl">
       <q-item v-for="(item, index) in itemList"
         class=" q-py-sm q-pa-none"
         rounded
@@ -9,34 +11,43 @@
         <q-item-section avatar
           top>
           <q-item-label>
-          
             <img :src="item.avatar"
               class="imageStyle" />
           </q-item-label>
         </q-item-section>
         <q-item-section>
-          <q-item-label class="text-bold text-h6">Will Question Be Here?</q-item-label>
+          <q-item-label class="text-bold text-h6">Will Question Be
+            Here?</q-item-label>
           <q-item-label class="caption">45 sec</q-item-label>
-          <q-item-label><q-btn icon="delete_forever" round color="red" flat/></q-item-label>
+          <q-item-label><q-btn icon="delete_forever"
+              round
+              color="red"
+              flat /></q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
-    <q-page-sticky position="bottom" class="full-width" :offset="[18, 18]">
-            <q-btn rounded class="add-button text-white" style="padding: 6px 130px"  icon="add" label="add new question" />
-          </q-page-sticky>
+    <q-page-sticky position="bottom"
+      class="full-width"
+      :offset="[18, 18]">
+      <q-btn rounded
+        class="add-button text-white"
+        style="padding: 6px 50px"
+        icon="add"
+        label="add new question" />
+    </q-page-sticky>
   </q-scroll-area>
 </template>
 
 <script>
 export default {
-   data: () => ({
-      thumbStyle: {
-        right: '2px',
-        borderRadius: '5px',
-        height: '5px',
-        width: '5px',
-        opacity: 0.75
-      },
+  data: () => ({
+    thumbStyle: {
+      right: '2px',
+      borderRadius: '5px',
+      height: '5px',
+      width: '5px',
+      opacity: 0.75
+    },
     itemList: [
       {
         active: true,
@@ -111,10 +122,9 @@ export default {
 
     ],
   }),
-    computed: {
-
-    calculatedHeight () {
-      return 'height: calc(100vh - 200px)'
+  computed: {
+    calculatedHeight() {
+      return 'height: calc(100vh - 12vh)'
     }
   }
 }
@@ -125,8 +135,9 @@ export default {
 }
 
 .scroll-border {
-background-color: white;
-  border: 1px solid silver; border-radius: 20px; 
+  background-color: white;
+  border: 1px solid silver;
+  border-radius: 20px;
 }
 
 .caption {
@@ -138,7 +149,7 @@ background-color: white;
   letter-spacing: 0px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1500px) {
   .imageStyle {
     height: 10vh;
     width: 12vh;
