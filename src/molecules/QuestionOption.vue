@@ -107,7 +107,7 @@
       </div>
     </div>
         <q-dialog v-model="modalConfirm" persistent>
-      <q-card class="cardStyle">
+      <q-card class="cardStyle rounded">
         <q-card-section class="q-ml-sm q-py-md q-px-xs row justify-between">
           <div class="text-h6">Option 1</div>
           <div><q-btn icon="close" @click="modalConfirm = false" flat class="text-grey"></q-btn></div>
@@ -131,7 +131,7 @@
         /></div>
         </q-card-section>
         <q-card-section class="q-pt-sm q-px-md q-mb-lg" align="center">
-          <q-btn label="CONFIRMAR" rounded type="submit" class="full-width q-py-sm text-bold text-white add-button"
+          <q-btn label="DONE" rounded type="submit" class="full-width q-py-sm text-bold text-white add-button"
             unelevated dense @click="modalConfirm = false" />
         </q-card-section>
       </q-card>
@@ -170,8 +170,8 @@ background-color: #ad5cde;border-radius: 20px
 background-color: #e2b951; border-radius: 20px
 }
 .cardStyle {
-  border-radius: 40px;
-   width:45vh
+  border-radius: 50px;
+  width:45vh
 }
 
 </style>

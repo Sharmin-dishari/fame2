@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="addBtnPosition">
-      <q-btn round class="add-button text-white text-bold" size="18px" icon="add" />
+      <q-btn round class="add-button text-white text-bold" size="17px" icon="add" />
     </div>
   </div>
 </template>

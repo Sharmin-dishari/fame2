@@ -127,20 +127,22 @@
                   </q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item-label v-if="!$q.screen.gt.sm" align="center">
+              <q-item-label v-if="!$q.screen.gt.sm" >
                 <q-img
                   spinner-color="white"
                   :ratio="1"
-                  class="q-my-md mobileImage"
+                  class="mobileImage"
                   :src="url"
                 >
-                  <div class="bottom-left">
-                    <q-item-label class="text-h6 q-pl-xs">{{
+                <q-item class="bottom-left q-pa-none q-ma-none">
+                  <q-item-section class="">
+                    <q-item-label class=" text-subtitle2">{{
                       fileName.substring(0, 10)
                     }}</q-item-label>
-                    <q-item-label class="">{{ fileSize }}</q-item-label>
-                  </div>
-                  <div class="bottom-right q-pb-md row">
+                    <q-item-label class="text-caption">{{ fileSize }}</q-item-label>
+                  </q-item-section>
+              <q-item-section side class="text-white">
+                  <div class="row" align="right">
                     <label
                       for="file-btn"
                       class="upload cursor-pointer"
@@ -160,9 +162,6 @@
                         ></q-icon>
                       </div>
                     </label>
-                    <!-- <q-btn class="add-button"
-                      icon="crop_original"
-                      round /> -->
                     <q-btn class="cropBtn" icon="crop" round />
                     <q-btn
                       class="cancelBtn"
@@ -171,6 +170,8 @@
                       round
                     />
                   </div>
+              </q-item-section>
+                </q-item>
                 </q-img>
               </q-item-label>
             </div>
@@ -238,7 +239,8 @@ export default {
 }
 .mobileImage{
   position: relative;
-  max-width: 30vh;
+  max-width: 100%;
+  max-height: 40vh;
   object-fit: contain;
   border-radius: 20px;
 }
@@ -269,8 +271,8 @@ padding: 14px 10px 14px 14px
 border-radius: 50%;
 }
 .bottom-left {
-  position: absolute;
   bottom: 0px;
+  right: 0px;
   left: 0px;
   color: white;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
