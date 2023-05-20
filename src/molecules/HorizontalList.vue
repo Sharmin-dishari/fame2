@@ -15,7 +15,7 @@
         <div class="text-bold text-h6">{{ item.title }}</div>
       </div>
     </div>
-    <div class="addBtnPosition">
+    <div class="addBtnPosition q-py-xl q-pr-sm">
       <q-btn round class="add-button text-white text-bold" size="17px" icon="add" />
     </div>
   </div>
@@ -122,6 +122,12 @@ export default {
 position: absolute; opacity: 0.5rem; right: 0; top: 0
 }
 .addBtnPosition{
-position: absolute; bottom: 9vh; right: 1vh
+position: absolute; 
+bottom: 6vh;
+right: 0vh;
+padding-left: 250px;
+background: #FFFFFF;
+background: linear-gradient(90deg,  rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+
 }
 </style>

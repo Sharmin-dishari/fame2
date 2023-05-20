@@ -22,6 +22,7 @@
             class="q-mr-sm q-py-xs text-bold text-white add-button"
             rounded
             label="Next"
+            to="/add-question"
           />
           <div v-else>
             <q-btn
@@ -38,6 +39,7 @@
               icon="arrow_forward"
               class="add-button text-white"
               size="18px"
+              to="/add-question"
             />
           </div>
         </q-item-label>
@@ -61,6 +63,7 @@
         unelevated
         class="q-mr-sm q-py-xs text-bold text-white add-button"
         rounded
+        to="/add-question"
         label="Next"
       />
     </div>
