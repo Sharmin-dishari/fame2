@@ -5,58 +5,69 @@
         <div class="row q-pa-lg">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="text-weight-medium q-my-md">Quiz Title</div>
-            <q-input label="Enter Quiz title"
+            <q-input
+              label="Enter Quiz title"
               class="rounded-pill"
               outlined
               rounded
               type="text"
-              v-model="quiz_title"></q-input>
+              v-model="quiz_title"
+            ></q-input>
             <div class="text-weight-medium q-mt-lg q-my-md">Description</div>
-            <q-input outlined
+            <q-input
+              outlined
               rounded
               name="input-7-4"
               class="rounded-lg"
               type="textarea"
               label="Enter Description"
-              v-model="quiz_description"></q-input>
+              v-model="quiz_description"
+            ></q-input>
             <div class="text-weight-medium q-pt-md">Quiz Type</div>
             <div class="q-gutter-sm">
-              <q-radio v-model="quiz_type"
+              <q-radio
+                v-model="quiz_type"
                 size="xl"
                 color="secondary"
                 val="option1"
-                label="Line" />
-              <q-radio v-model="quiz_type"
+                label="Line"
+              />
+              <q-radio
+                v-model="quiz_type"
                 color="secondary"
                 size="xl"
                 val="option2"
-                label="Rectangle" />
+                label="Rectangle"
+              />
             </div>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-6"
-            :class="$q.screen.gt.xs && 'q-pl-xl q-pt-md'">
-            <div class="text-weight-medium q-mb-md">
-              Quiz Image
-            </div>
-            <div :class="$q.screen.lt.sm ? 'dashed2' : 'dashed'
-              "
+          <div
+            class="col-xs-12 col-sm-6 col-md-6"
+            :class="$q.screen.gt.xs && 'q-pl-xl q-pt-md'"
+          >
+            <div class="text-weight-medium q-mb-md">Quiz Image</div>
+            <div
+              :class="$q.screen.lt.sm ? 'dashed2' : 'dashed'"
               align="center"
               @dragover="handleDragOver"
-              @drop="handleDrop">
-              <label for="file-btn"
-                class="upload"
-                style="cursor: pointer">
-                <input type="file"
+              @drop="handleDrop"
+            >
+              <label for="file-btn" class="upload" style="cursor: pointer">
+                <input
+                  type="file"
                   id="file-btn"
                   ref="fileUrl"
                   @change="handleFileUpload"
-                  hidden />
-                <img class="image"
+                  hidden
+                />
+                <img
+                  class="image"
                   width="100"
                   spinner-color="white"
                   :src="url"
                   cover
-                  :aspect-ratio="1" />
+                  :aspect-ratio="1"
+                />
                 <div class="text-weight-medium">Upload Image</div>
                 <div class="text-caption text-center">
                   Or Drag & Drop Image file here
