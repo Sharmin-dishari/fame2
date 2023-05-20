@@ -30,8 +30,7 @@
     <q-page-sticky position="bottom" class="full-width" :offset="[18, 18]">
       <q-btn
         rounded
-        class="add-button text-white"
-        style="padding: 6px 50px"
+        class="add-button addBtnSize text-white"
         icon="add"
         label="add new question"
       />
@@ -133,10 +132,12 @@ export default {
 .item-border {
   padding-bottom: 12px;
 }
-
+.addBtnSize{
+padding: 6px 50px
+}
 .scroll-border {
   background-color: white;
-  border: 1px solid silver;
+  border: 1px solid #dfdfdf;
   border-radius: 20px;
 }
 

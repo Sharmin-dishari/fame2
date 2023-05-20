@@ -52,7 +52,7 @@
               @dragover="handleDragOver"
               @drop="handleDrop"
             >
-              <label for="file-btn" class="upload" style="cursor: pointer">
+              <label for="file-btn" class="upload cursor-pointer">
                 <input
                   type="file"
                   id="file-btn"

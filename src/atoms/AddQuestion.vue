@@ -3,7 +3,7 @@
     :class="$q.screen.width >= 1300 ? 'q-pa-xl' : 'q-pt-lg'"
     class="bg-color"
   >
-    <q-item class="q-pb-lg">
+    <q-item class="q-pb-lg q-px-lg">
       <q-item-section>
         <q-item-label class="text-bold text-h5">Quiz List</q-item-label>
       </q-item-section>
@@ -46,7 +46,7 @@
         </q-item-label>
       </q-item-section>
     </q-item>
-    <div class="row q-mx-md">
+    <div class="row q-mx-lg">
       <question-list
         class="col-sm-4 col-md-4 col-lg-3 col-xl-3"
         v-if="$q.screen.width >= 1300"
@@ -56,7 +56,7 @@
       />
     </div>
     <horizontal-list v-if="$q.screen.width < 1300" />
-    <div class="fixedButton q-pt-xl" v-if="$q.screen.gt.sm" align="end">
+    <div class="fixedButton q-pt-xl" v-if="$q.screen.width > 1300" align="end">
       <q-btn
         unelevated
         class="q-mr-sm q-py-xs text-bold text-white bg-grey-7"
@@ -85,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .fixedButton {
   bottom: 1rem;
   right: 2rem;

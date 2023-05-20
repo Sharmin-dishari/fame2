@@ -36,7 +36,7 @@
             @dragover="handleDragOver"
             @drop="handleDrop"
           >
-            <label for="file-btn" class="upload" style="cursor: pointer">
+            <label for="file-btn" class="upload cursor-pointer" >
               <input
                 type="file"
                 id="file-btn"
@@ -60,12 +60,12 @@
           </div>
           <div v-else>
             <div>
-              <q-item v-if="$q.screen.gt.sm" class="bg-grey-11" style="border-radius: 20px;">
+              <q-item v-if="$q.screen.gt.sm" class="bg-grey-12 borderForm">
                 <q-item-section avatar>
                   <q-item-label>
-                    <div class="container">
+                    <div class="container ">
                       <img
-                        class="q-py-md q-px-sm"
+                        class="q-py-md q-px-sm borderForm"
                         width="300"
                         spinner-color="white"
                         :src="url"
@@ -82,26 +82,9 @@
                 <q-item-section side>
                   <q-item-label class="text-white q-gutter-y-md">
                     <div>
-                      <!-- <label for="file-btn"
-                class="upload"
-                style="cursor: pointer">
-                <input type="file"
-                  id="file-btn"
-                  ref="fileUrl"
-                  @change="handleFileUpload"
-                  hidden /> -->
-                      <!-- <q-file v-model="model" borderless>
-
-                 <q-btn label="Change Image "
-                          class="add-button text-white"
-                          style="margin-left: -170px"
-                          icon="crop_original" />
-                          </q-file> -->
-                      <!-- </label> -->
                       <label
                         for="file-btn"
-                        class="upload"
-                        style="cursor: pointer"
+                        class="upload cursor-pointer"
                       >
                         <input
                           type="file"
@@ -110,15 +93,15 @@
                           @change="handleFileUpload"
                           hidden
                         />
-                        <div class="add-button row" style="border-radius: 27px">
+                        <div class="add-button row changeBtnBorder">
                           <div>
                             <q-icon
                               name="crop_original"
-                              style="padding: 14px 10px 14px 14px"
                               size="24px"
+                              class="changeIcon"
                             ></q-icon>
                           </div>
-                          <div style="padding-top: 18px" class="text-bold">
+                          <div class="text-bold changeText">
                             CHANGE IMAGE
                           </div>
                         </div>
@@ -148,13 +131,7 @@
                 <q-img
                   spinner-color="white"
                   :ratio="1"
-                  class="q-my-md"
-                  style="
-                    position: relative;
-                    max-width: 300px;
-                    object-fit: contain;
-                    border-radius: 20px;
-                  "
+                  class="q-my-md mobileImage"
                   :src="url"
                 >
                   <div class="bottom-left">
@@ -166,8 +143,7 @@
                   <div class="bottom-right q-pb-md row">
                     <label
                       for="file-btn"
-                      class="upload"
-                      style="cursor: pointer"
+                      class="upload cursor-pointer"
                     >
                       <input
                         type="file"
@@ -178,8 +154,7 @@
                       />
                       <div>
                         <q-icon
-                          class="add-button q-pa-sm rounded"
-                          style="border-radius: 50%"
+                          class="add-button q-pa-sm rounded changeRound"
                           name="crop_original"
                           size="28px"
                         ></q-icon>
@@ -261,11 +236,25 @@ export default {
   color: white;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
-
+.mobileImage{
+  position: relative;
+  max-width: 30vh;
+  object-fit: contain;
+  border-radius: 20px;
+}
+.borderForm{
+border-radius: 20px;
+ border: 1px solid #dfdfdf;
+}
 .cropBtn {
   background-color: #6c6f85;
 }
-
+.changeBtnBorder{
+border-radius: 27px
+}
+.changeText{
+padding-top: 18px
+}
 .button-padding {
   padding-right: 20px;
 }
@@ -273,7 +262,12 @@ export default {
 .cancelBtn {
   background-color: #a1a1a1;
 }
-
+.changeIcon {
+padding: 14px 10px 14px 14px
+}
+.changeRound{
+border-radius: 50%;
+}
 .bottom-left {
   position: absolute;
   bottom: 0px;

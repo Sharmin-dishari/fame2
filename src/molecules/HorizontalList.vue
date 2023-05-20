@@ -2,22 +2,21 @@
   <div>
     <div
       class="horizontal-scroll-container q-mt-md q-mb-sm q-pt-md q-pb-xl bg-white q-px-lg"
-      style="position: relative"
     >
       <div class="item q-pa-xs" v-for="item in itemList" :key="item.id">
         <q-img :src="item.avatar" alt="Item Image" class="imageStyle">
           <q-btn
             icon="delete_forever"
-            class="bg-white text-red-9 q-ma-xs"
+            class="bg-white text-red-9 q-ma-xs btnPosition"
             round
-            style="position: absolute; opacity: 0.5rem; right: 0; top: 0"
+            
           />
         </q-img>
         <div class="text-bold text-h6">{{ item.title }}</div>
       </div>
     </div>
-    <div style="position: absolute; bottom: 50px; right: 10px">
-      <q-btn round class="add-button text-white" size="16px" icon="add" />
+    <div class="addBtnPosition">
+      <q-btn round class="add-button text-white text-bold" size="18px" icon="add" />
     </div>
   </div>
 </template>
@@ -101,9 +100,10 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .horizontal-scroll-container {
   overflow-x: auto;
+  position: relative;
   white-space: nowrap;
 }
 
@@ -114,8 +114,14 @@ export default {
 }
 
 .imageStyle {
-  width: 150px;
-  height: 90px;
+  width: 15vh;
+  height: 9vh;
   position: relative;
+}
+.btnPosition{
+position: absolute; opacity: 0.5rem; right: 0; top: 0
+}
+.addBtnPosition{
+position: absolute; bottom: 9vh; right: 1vh
 }
 </style>

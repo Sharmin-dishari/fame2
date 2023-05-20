@@ -2,14 +2,19 @@
   <div class="text-white q-pb-md">
     <div class="row">
       <div class="q-pa-sm col-6">
-        <q-card class="q-mb-sm" flat style="background-color: #4F92E3;border-radius: 20px">
-          <q-card-section class="q-pb-xs">
-            <div class="text-h6">Your address</div>
+        <q-card class="q-mb-sm option1" flat>
+          <q-card-section class="q-pb-xs row justify-between">
+            <div class="text-h6">Option1</div>
+            <div><q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
+      ANSWER
+    </q-chip>
+    <q-btn v-else icon="done" class="bg-white text-primary" size="sm" flat round/>
+    </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
             <q-input
-              v-model="address"
+              v-model="option1"
               autofocus
               label="Enter Option Here"
               label-color="white"
@@ -18,91 +23,103 @@
             />
           </q-card-section>
           <q-card-section v-else>
-            <div class="q-pt-none">Enter Option Here</div>
+            <div class="q-pt-none" @click="modalConfirm = true">Enter Option Here</div>
           </q-card-section>
         </q-card>
       </div>
       <div class="q-pa-sm col-6">
-        <q-card flat style="background-color: #30c7b3;border-radius: 20px">
-          <q-card-section class="q-pb-xs" @click="modalConfirm = true">
-            <div class="text-h6">Your address</div>
+        <q-card flat class="option2">
+          <q-card-section class="q-pb-xs row justify-between">
+            <div class="text-h6">Option2</div>
+            <q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
+      ANSWER
+    </q-chip>
+    <q-btn icon="done" v-else class="bg-white text-primary" size="sm" flat round/>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
             <q-input
               label-color="white"
               input-class="text-white"
-              v-model="address"
+              v-model="option2"
               autofocus
               label="Enter Option Here"
               class="text-white"
             />
           </q-card-section>
-          <q-card-section v-else @click="modalConfirm = true">
-            <div class="q-pt-none">Enter Option Here</div>
+          <q-card-section v-else>
+            <div class="q-pt-none" @click="modalConfirm = true">Enter Option Here</div>
           </q-card-section>
         </q-card>
       </div>
     </div>
     <div class="row">
       <div class="q-px-sm col-6">
-        <q-card flat style="background-color: #ad5cde;border-radius: 20px">
-          <q-card-section class="q-pb-xs">
-            <div class="text-h6">Your address</div>
+        <q-card flat class="option3">
+          <q-card-section class="q-pb-xs row justify-between" >
+            <div class="text-h6">Option3</div>
+            <q-chip outline color="white" v-if="$q.screen.gt.sm" text-color="white">
+      ANSWER
+    </q-chip>
+    <q-btn icon="done" v-else class="bg-white text-primary" size="sm" flat round/>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
             <q-input
               label-color="white"
               input-class="text-white"
-              v-model="address"
+              v-model="option3"
               autofocus
               label="Enter Option Here"
               class="text-white"
             />
           </q-card-section>
-          <q-card-section v-else @click="modalConfirm = true">
-            <div class="q-pt-none">Enter Option Here</div>
+          <q-card-section v-else>
+            <div class="q-pt-none" @click="modalConfirm = true">Enter Option Here</div>
           </q-card-section>
         </q-card>
       </div>
       <div class="q-px-sm col-6">
-        <q-card flat class="col-6" style="background-color: #e2b951; border-radius: 20px">
-          <q-card-section class="q-pb-xs">
-            <div class="text-h6">Your address</div>
+        <q-card flat class="col-6 option4">
+          <q-card-section class="q-pb-xs row justify-between" >
+            <div class="text-h6">Option4</div>
+            <q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
+      ANSWER
+    </q-chip>
+    
+    <div  v-else><q-btn icon="done" class="bg-white text-primary" size="sm" flat round/></div>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
             <q-input
               label-color="white"
               input-class="text-white"
-              v-model="address"
+              v-model="option4"
               autofocus
-              @keyup.enter="prompt = false"
               label="Enter Option Here"
               class="text-white"
             />
           </q-card-section>
-          <q-card-section v-else @click="modalConfirm = true">
-            <div class="q-pt-none">Enter Option Here</div>
+          <q-card-section v-else>
+            <div class="q-pt-none" @click="modalConfirm = true">Enter Option Here</div>
           </q-card-section>
         </q-card>
       </div>
     </div>
         <q-dialog v-model="modalConfirm" persistent>
-      <q-card style="border-radius: 20px; width:450px">
+      <q-card class="cardStyle">
         <q-card-section class="q-ml-sm q-py-md q-px-xs row justify-between">
           <div class="text-h6">Option 1</div>
           <div><q-btn icon="close" @click="modalConfirm = false" flat class="text-grey"></q-btn></div>
         </q-card-section>
         <q-card-section class="q-pa-md">
           <q-input
-              label="Enter Quiz title"
+              label="Enter Answer"
               class="q-pt-xs"
               outlined
               rounded
               type="text"
-              v-model="quiz_title">
+              v-model="quiz_answer">
               </q-input>
         </q-card-section>
         <q-card-section class="row q-pa-md justify-between">
@@ -127,14 +144,34 @@ export default {
   data() {
     return {
     modalConfirm: false,
-    model: false
+    model: false,
+    option1: '',
+    option2: '',
+    option3: '',
+    option4: '',
+    quiz_answer: ''
+
     }
   }
 }
 </script>
 
 <style>
-.cardStyle {
-  border-radius: 25px;
+.option1{
+background-color: #4F92E3;border-radius: 20px
 }
+.option2{
+background-color: #30c7b3;border-radius: 20px;
+}
+.option3{
+background-color: #ad5cde;border-radius: 20px
+}
+.option4{
+background-color: #e2b951; border-radius: 20px
+}
+.cardStyle {
+  border-radius: 40px;
+   width:45vh
+}
+
 </style>
