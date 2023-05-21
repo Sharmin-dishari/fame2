@@ -1,5 +1,5 @@
 <template>
-  <div class="form-bg" :class="$q.screen.gt.md && 'q-ml-md'">
+  <div class="form-bg" :class="$q.screen.width >= 1300 && 'q-ml-md'">
     <q-form>
       <div class="q-pa-lg">
         <div class="row">
@@ -61,7 +61,9 @@
           <div v-else>
             <div>
               <q-item v-if="$q.screen.gt.sm" class="bg-grey-12 borderForm">
-                <q-item-section avatar>
+                <q-item-section avatar 
+                @dragover="handleDragOver"
+                @drop="handleDrop">
                   <q-item-label>
                     <div class="container ">
                       <img
@@ -74,8 +76,8 @@
                   </q-item-label>
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label class="text-h6">{{
-                    fileName.substring(0, 20)
+                  <q-item-label class="text-h6" v-if="fileName">{{
+                   fileName.substring(0, 10)
                   }}</q-item-label>
                   <q-item-label>{{ fileSize }}</q-item-label>
                 </q-item-section>
@@ -136,7 +138,7 @@
                 >
                 <q-item class="bottom-left q-pa-none q-ma-none">
                   <q-item-section class="">
-                    <q-item-label class=" text-subtitle2">{{
+                    <q-item-label class=" text-subtitle2" v-if="fileName">{{
                       fileName.substring(0, 10)
                     }}</q-item-label>
                     <q-item-label class="text-caption">{{ fileSize }}</q-item-label>
@@ -162,7 +164,7 @@
                         ></q-icon>
                       </div>
                     </label>
-                    <q-btn class="cropBtn" icon="crop" round />
+                    <q-btn class="cropBtn q-mx-sm" icon="crop" round />
                     <q-btn
                       class="cancelBtn"
                       icon="delete_forever"
@@ -206,7 +208,7 @@ export default {
     async handleFileUpload(event) {
       const file = event.target.files[0];
       this.url = URL.createObjectURL(file);
-      this.fileName = event.target.files[0].name;
+      this.fileName = file.name;
       this.fileSize = `${(event.target.files[0].size / 1024).toFixed(2)}MB`;
     },
     handleDragOver(event) {
@@ -217,8 +219,8 @@ export default {
       event.preventDefault();
       const files = event.dataTransfer.files;
       this.url = URL.createObjectURL(files[0]);
-      this.fileName = event.target.files[0].name;
-      this.fileSize = `${(event.target.files[0].size / 1024).toFixed(2)}MB`;
+      this.fileName = event.dataTransfer.files[0].name;
+      this.fileSize = `${(event.dataTransfer.files[0].size / 1024).toFixed(2)}MB`;
     },
   },
 };

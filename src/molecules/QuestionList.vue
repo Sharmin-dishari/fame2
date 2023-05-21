@@ -1,10 +1,9 @@
 <template>
   <q-scroll-area
     :vertical-thumb-style="thumbStyle"
-    :style="calculatedHeight"
     class="scroll-border"
   >
-    <q-list separator class="q-px-md q-pb-xl">
+    <q-list separator class="q-px-md q-pb-xl vl">
       <q-item
         v-for="(item, index) in itemList"
         class="q-py-sm q-pa-none"
@@ -22,7 +21,7 @@
           >
           <q-item-label class="caption">45 sec</q-item-label>
           <q-item-label
-            ><q-btn icon="delete_forever" round color="red" flat
+            ><q-btn icon="delete_forever" round color="red" flat style="margin-left: -10px"
           /></q-item-label>
         </q-item-section>
       </q-item>
@@ -122,15 +121,20 @@ export default {
     ],
   }),
   computed: {
-    calculatedHeight() {
-      return "height: calc(100vh - 12vh)";
-    },
+    // calculatedHeight() {
+    //   return "height: calc(100vh - 12vh)";
+    // },
   },
 };
 </script>
 <style>
 .item-border {
   padding-bottom: 12px;
+}
+.vl {
+  border-left: 6px solid green;
+  height: 150px;
+  position: relative;
 }
 .addBtnSize{
 padding: 6px 50px

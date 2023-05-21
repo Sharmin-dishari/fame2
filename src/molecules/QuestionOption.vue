@@ -5,10 +5,10 @@
         <q-card class="q-mb-sm option1" flat>
           <q-card-section class="q-pb-xs row justify-between">
             <div class="text-h6">Option1</div>
-            <div><q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
-      ANSWER
+            <div><q-chip class="q-py-md" v-if="$q.screen.gt.sm" outline color="white" text-color="white"><q-radio  v-model="option_answer" label="ANSWER" val="option1" color="white"></q-radio>
+      
     </q-chip>
-    <q-btn v-else icon="done" class="bg-white text-primary" size="sm" flat round/>
+    <q-radio  v-else v-model="option_answer" size="lg" style="margin-top: -8px" val="option1" color="white"></q-radio>
     </div>
           </q-card-section>
 
@@ -31,12 +31,12 @@
         <q-card flat class="option2">
           <q-card-section class="q-pb-xs row justify-between">
             <div class="text-h6">Option2</div>
-            <q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
-      ANSWER
+            <q-chip class="q-py-md" v-if="$q.screen.gt.sm" outline color="white" text-color="white"><q-radio  v-model="option_answer" label="ANSWER" val="option2" color="white"></q-radio>
+      
     </q-chip>
-    <q-btn icon="done" v-else class="bg-white text-primary" size="sm" flat round/>
+    <q-radio  v-else v-model="option_answer" size="lg" style="margin-top: -8px" val="option2" color="white"></q-radio>
+    <!-- <q-btn icon="done" v-else class="bg-white text-primary" size="sm" flat round/> -->
           </q-card-section>
-
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
             <q-input
               label-color="white"
@@ -58,10 +58,10 @@
         <q-card flat class="option3">
           <q-card-section class="q-pb-xs row justify-between" >
             <div class="text-h6">Option3</div>
-            <q-chip outline color="white" v-if="$q.screen.gt.sm" text-color="white">
-      ANSWER
+            <q-chip class="q-py-md" v-if="$q.screen.gt.sm" outline color="white" text-color="white"><q-radio  v-model="option_answer" label="ANSWER" val="option3" color="white"></q-radio>
+      
     </q-chip>
-    <q-btn icon="done" v-else class="bg-white text-primary" size="sm" flat round/>
+    <q-radio  v-else v-model="option_answer" size="lg" style="margin-top: -8px" val="option3" color="white"></q-radio>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
@@ -83,11 +83,11 @@
         <q-card flat class="col-6 option4">
           <q-card-section class="q-pb-xs row justify-between" >
             <div class="text-h6">Option4</div>
-            <q-chip v-if="$q.screen.gt.sm" outline color="white" text-color="white">
-      ANSWER
+            <q-chip class="q-py-md" v-if="$q.screen.gt.sm" outline color="white" text-color="white"><q-radio  v-model="option_answer" label="ANSWER" val="option4" color="white"></q-radio>
+      
     </q-chip>
     
-    <div  v-else><q-btn icon="done" class="bg-white text-primary" size="sm" flat round/></div>
+    <q-radio  v-else v-model="option_answer" size="lg" style="margin-top: -8px" val="option4" color="white"></q-radio>
           </q-card-section>
 
           <q-card-section class="q-pt-none" v-if="$q.screen.gt.sm">
@@ -149,6 +149,7 @@ export default {
     option2: '',
     option3: '',
     option4: '',
+    option_answer: '',
     quiz_answer: ''
 
     }
