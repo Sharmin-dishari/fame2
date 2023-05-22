@@ -85,7 +85,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .fixedButton {
-    margin-top: 10vh;
+    margin-top: 1vh;
     bottom: 0.5rem;
     right: 0;
   }

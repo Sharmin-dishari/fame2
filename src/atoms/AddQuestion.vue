@@ -56,7 +56,7 @@
       />
     </div>
     <horizontal-list v-if="$q.screen.width < 1300" />
-    <div class="fixedButton q-pt-xl" v-if="$q.screen.width > 1300" align="end">
+    <div class="fixedButton q-pt-lg q-pr-lg" v-if="$q.screen.width > 1300" align="end">
       <q-btn
         unelevated
         class="q-mr-sm q-py-xs text-bold text-white bg-grey-7"
@@ -88,14 +88,6 @@ export default {
 <style scoped>
 .fixedButton {
   bottom: 1rem;
-  right: 2rem;
-}
-
-@media only screen and (max-width: 600px) {
-  .fixedButton {
-    margin-top: 10vh;
-    bottom: 0.5rem;
-    right: 0;
-  }
+  right: 3rem;
 }
 </style>

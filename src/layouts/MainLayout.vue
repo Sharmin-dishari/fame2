@@ -113,6 +113,7 @@ export default {
   }
 }
 </script>
-<style>.iconColor {
+<style scoped>
+.iconColor {
   color: #A1A1A1;
 }</style>

@@ -3,7 +3,7 @@
     :vertical-thumb-style="thumbStyle"
     class="scroll-border"
   >
-    <q-list separator class="q-px-md q-pb-xl vl">
+    <q-list separator class="q-px-md vl">
       <q-item
         v-for="(item, index) in itemList"
         class="q-py-sm q-pa-none"
@@ -26,7 +26,7 @@
         </q-item-section>
       </q-item>
     </q-list>
-    <q-page-sticky position="bottom" class="full-width" :offset="[18, 18]">
+<q-page-sticky  position="bottom" class="full-width" :offset="[18, 18]">
       <q-btn
         rounded
         class="add-button addBtnSize text-white"
@@ -53,6 +53,7 @@ export default {
         avatar: "image1.png",
         title: "Jason Oner",
       },
+      
       {
         active: true,
         avatar: "image2.png",
@@ -66,58 +67,10 @@ export default {
         avatar: "image4.png",
         title: "Ali Connors",
       },
-      {
-        active: true,
-        avatar: "image2.png",
-        title: "Mike Carlson",
-      },
-      {
-        avatar: "image3.png",
-        title: "Cindy Baker",
-      },
-      {
-        avatar: "image4.png",
-        title: "Ali Connors",
-      },
-      {
-        active: true,
-        avatar: "image2.png",
-        title: "Mike Carlson",
-      },
-      {
-        avatar: "image3.png",
-        title: "Cindy Baker",
-      },
-      {
-        avatar: "image4.png",
-        title: "Ali Connors",
-      },
-      {
-        active: true,
-        avatar: "image2.png",
-        title: "Mike Carlson",
-      },
-      {
-        avatar: "image3.png",
-        title: "Cindy Baker",
-      },
-      {
-        avatar: "image4.png",
-        title: "Ali Connors",
-      },
-      {
-        active: true,
-        avatar: "image2.png",
-        title: "Mike Carlson",
-      },
-      {
-        avatar: "image3.png",
-        title: "Cindy Baker",
-      },
-      {
-        avatar: "image4.png",
-        title: "Ali Connors",
-      },
+  
+  
+      
+      
     ],
   }),
   computed: {
@@ -127,13 +80,13 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .item-border {
   padding-bottom: 12px;
 }
 .vl {
-  border-left: 6px solid green;
-  height: 150px;
+  border-left: 5px solid  #4F92E3;;
+  height: 120px;
   position: relative;
 }
 .addBtnSize{
