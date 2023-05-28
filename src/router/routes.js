@@ -5,9 +5,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-       { path: 'quiz-index', component: () => import('src/atoms/QuizIndex.vue') },
-       { path: 'create-quiz', component: () => import('src/atoms/CreateQuiz.vue') },
-       { path: 'add-question', component: () => import('src/atoms/AddQuestion.vue') }
+       { path: 'login-index', component: () => import('src/atoms/LoginIndex.vue') },
+       { path: 'forgot-password', component: () => import('src/atoms/ForgotPassword.vue') },
+       { path: 'sign-up', component: () => import('src/atoms/SignUP.vue') }
 
     ]
   },
