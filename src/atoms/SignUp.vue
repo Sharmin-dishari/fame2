@@ -47,14 +47,14 @@
         />
       </q-step>
 
-      <q-step :name="4" :done="step > 4" icon="lock" done-icon="lock">
+      <!-- <q-step :name="4" :done="step > 4" icon="lock" done-icon="lock">
         <SecurityInfo
           :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
           @handle-next="$refs.stepper.next()"
           @handle-previous="$refs.stepper.previous()"
         />
-      </q-step>
-      <q-step :name="5" icon="flag" class="flag" done-icon="flag">
+      </q-step> -->
+      <q-step :name="4" icon="flag" class="flag" done-icon="flag">
         <ReadyInfo
           :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
           @handle-next="$refs.stepper.next()"
@@ -83,7 +83,7 @@ export default {
     PersonalInfo,
     PublicInfo,
     AccountInfo,
-    SecurityInfo,
+    // SecurityInfo,
     ReadyInfo,
   },
   data() {

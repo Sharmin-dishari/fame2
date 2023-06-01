@@ -18,7 +18,7 @@
               outlined
               v-model="loginId"
               class="q-pb-md"
-              dense
+              label="Email"
               bg-color="white"
               :rules="[(val) => !!val || 'Field is required']"
               placeholder="Enter your email address"
@@ -27,7 +27,7 @@
               v-model.trim="password"
               class="q-pt-sm q-pb-md"
               outlined
-              dense
+              label="Password"
               bg-color="white"
               placeholder="Enter your password"
               :type="isPwd ? 'password' : 'text'"

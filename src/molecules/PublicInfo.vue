@@ -32,7 +32,28 @@
               v-model="email"
               placeholder="Enter your email"
               label="EMAIL"
-              class="q-mb-sm input-field"
+              class="q-mb-sm input-field q-pb-md"
+            />
+            <q-input
+              v-model.trim="password"
+              class="q-pb-lg"
+              outlined
+              label="Password"
+              bg-color="white"
+              placeholder="Enter your password"
+              :type="isPwd ? 'password' : 'text'"
+              :rules="[
+                (val) => !!val || 'Field is required',
+                (val) => val.length >= 6 || 'Minimum length 6',
+              ]"
+            />
+            <q-input
+              v-model="confirmPass"
+              outlined
+              label="CONFIRM PASSWORD"
+              placeholder="Confirm Password"
+              type="password"
+              :rules="[(val) => val === password || 'Password doesn\'t match']"
             />
           </q-form>
         </q-card>
@@ -46,7 +67,7 @@
               class="text-black q-px-md q-py-xs btnRound q-mr-md"
             />
             <q-btn
-              label="Submit"
+              label="Next"
               color="white"
               @click="$emit('handle-next')"
               class="text-black q-px-md q-py-xs btnRound"
@@ -66,6 +87,9 @@ export default {
       first_name: "",
       last_name: "",
       email: "",
+      confirmPass: "",
+      password: "",
+      isPwd: false,
     };
   },
 };
