@@ -27,7 +27,7 @@ module.exports = function (/* ctx */) {
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
-    css: [
+     css: [
       'app.scss'
     ],
 
@@ -84,7 +84,11 @@ module.exports = function (/* ctx */) {
     framework: {
       iconSet: 'material-icons', // Quasar icon set
       lang: 'en-us', // Quasar language pack
-      config: {},
+      config: {
+      stepper: {
+          iconSize: '30px' // Increase the size as per your requirement
+        },
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives

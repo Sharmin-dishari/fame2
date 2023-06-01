@@ -5,13 +5,18 @@
       src="~assets/quasar-logo-vertical.svg"
       style="width: 200px; height: 200px"
     > -->
-    <br/>
-    <q-btn size="lg" label="start here" to="/quiz-index" class="add-button text-white"/>
+    <br />
+    <q-btn
+      size="lg"
+      label="start here"
+      to="/sign-up"
+      class="add-button text-white"
+    />
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
-}
+  name: "PageIndex",
+};
 </script>
