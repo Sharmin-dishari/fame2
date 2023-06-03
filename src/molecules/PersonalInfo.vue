@@ -8,7 +8,7 @@
       v-if="$q.screen.width > 1024"
       :class="$q.screen.width > 1680 ? 'q-gutter-x-xl' : 'q-gutter-x-md'"
     >
-      <q-card class="q-mt-xl card-size btnRound" flat>
+      <q-card class="q-mt-xl q-px-lg card-size btnRound" flat>
         <q-card-section>
           <div class="type-image fixed_height">
            <div class="">
@@ -22,7 +22,7 @@
             <div class="my-class text-center q-pt-md">
               <div class="text-h6 text-weight-medium">Company</div>
               <div class="caption q-pt-md">
-                Create a company account to be able to do some awesome things.
+                Create a company account to be able to <br> do some awesome things.
               </div>
               <q-btn
                 label="continue"
@@ -35,7 +35,7 @@
           </div>
         </q-card-section>
       </q-card>
-      <q-card class="q-mt-xl card-size btnRound" flat>
+      <q-card class="q-mt-xl card-size btnRound q-px-lg" flat>
         <div class="type-image">
         <div class="fixed_height">
           <img class="type-illustration" src="type-2.svg" alt="" />
@@ -43,9 +43,9 @@
           </div>
         </div>
         <div class="text-center q-px-md">
-          <div class="text-h6 text-weight-medium q-pt-lg">Public Person</div>
+          <div class="text-h6 text-weight-medium q-mt-sm">Public Person</div>
           <div class="caption q-pt-md">
-            Create a public account to be able to do some awesome things.
+            Create a public account to be able to do <br> some awesome things.
           </div>
         </div>
         <div class="my-class q-mx-md text-center">
@@ -58,7 +58,7 @@
           />
         </div>
       </q-card>
-      <q-card class="q-mt-xl q-px-md card-size btnRound" flat>
+      <q-card class="q-mt-xl q-px-md card-size btnRound q-px-lg" flat>
         <div class="type-image">
         <div class="fixed_height">
           <img class="type-illustration" src="type-3.svg" alt="" />
@@ -69,7 +69,7 @@
         <div class="my-class  text-center">
           <div class="image3 text-h6 text-weight-medium">Personal</div>
           <div class="caption q-pt-md">
-            Create a personal account to be able to do some awesome things.
+            Create a personal account to be able to <br> do some awesome things.
           </div>
           <q-btn
             label="continue"
@@ -144,15 +144,9 @@ export default {};
 .car-image {
   width: 110%;
 }
-/* .card-size {
-  width: 35vh;
-} */
+
 .fixed-height{
 position: relative;
 }
-@media (width < 1780px) {
-  /* .card-size {
-    max-width: 45vh;
-  } */
-}
+
 </style>
