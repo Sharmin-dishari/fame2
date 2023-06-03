@@ -70,13 +70,18 @@
               no-caps
               unelevated
               color="primary"
+              clearable
+              :rules="[
+                (val) => !!val || 'Field is required',
+                (val) => validateEmail(val) || 'Type a valid Email',
+              ]"
               class="q-px-md q-py-xs full-width text-weight-bolder btnRound"
               type="submit"
             />
           </q-card-actions>
           <q-card-section class="text-center hover-btn">
-            Don't have an account?
-            <q-btn
+            Don't have an account?<span class="cursor-pointer q-ml-xs" @click="$router.push('/sign-up')">Sign Up</span>
+            <!-- <q-btn
               flat
               dense
               no-caps
@@ -84,7 +89,7 @@
               class="q-py-none"
               to="/sign-up"
               label="Sign Up"
-            />
+            /> -->
           </q-card-section>
         </q-form>
       </div>
@@ -93,6 +98,7 @@
 </template>
 
 <script>
+import { validateEmail } from "src/utils";
 export default {
   name: "LoginIndex",
 
@@ -106,6 +112,7 @@ export default {
     };
   },
   methods: {
+   validateEmail,
     handleLogin() {},
   },
 };

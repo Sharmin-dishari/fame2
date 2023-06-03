@@ -1,6 +1,7 @@
 <template>
-  <div class="text-center">
-    <div>
+  <div>
+     <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
+       ">
       <div class="text-h5 text-center text-weight-medium q-pb-md">
         Secure your account.
       </div>
@@ -9,7 +10,7 @@
           class="bg-white q-pa-xl btnRound q-mx-auto box"
           flat
           :class="
-            $q.screen.lt.sm ? 'mobile-card q-pa-lg' : 'desktop-card q-pa-xl'
+            $q.screen.lt.sm ? 'q-pa-lg' : 'q-pa-xl'
           "
         >
           <div class="logo_bg"></div>
@@ -31,8 +32,7 @@
                       name="add"
                       size="sm"
                       rounded
-                      class="bg-grey-5 text-white q-pa-xs"
-                      style="border: 6px solid white; border-radius: 50%"
+                      class="bg-grey-5 text-white q-pa-xs cursor-pointer btn-hover add-icon"
                     />
                     <input
                       type="file"
@@ -48,7 +48,7 @@
           </q-card-section>
           <div>Only images with a size lower than 3MB are allowed.</div>
         </q-card>
-        <div class="q-mt-lg" :style="$q.screen.gt.sm && 'padding-left: 40vh'">
+        <div class="q-mt-lg" align="right">
           <q-card class="bg-color" flat>
             <q-btn
               label="Back"
@@ -97,6 +97,9 @@ export default {
   border: 2px solid rgb(221, 220, 220);
   padding-right: 13px;
   padding-bottom: 20px;
+}
+.add-icon{
+border: 6px solid white; border-radius: 50%
 }
 .avatarSize {
   margin-top: -4px;

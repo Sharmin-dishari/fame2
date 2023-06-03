@@ -1,21 +1,21 @@
 <template>
-  <div class="text-center">
-    <div>
+    <div> 
+    <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
+      ">
       <div class="text-h5 text-center text-weight-medium q-pb-md">
         Tell us more about you.
       </div>
-      <div align="center">
+      <div class="">
         <q-card
-          class="bg-white btnRound"
+          class="bg-white btnRound "
           flat
-          :class="
-            $q.screen.lt.sm ? 'mobile-card q-pa-lg' : 'desktop-card q-pa-xl'
-          "
+          :class="$q.screen.lt.sm ? 'q-pa-lg' : 'q-pa-xl'
+            "
         >
           <q-form>
             <q-input
               outlined
-              class="input-field"
+              class="input-field q-mt-md"
               v-model="first_name"
               placeholder="Enter your first name"
               label="FIRST NAME"
@@ -57,7 +57,7 @@
             />
           </q-form>
         </q-card>
-        <div class="q-mt-lg" :class="$q.screen.gt.sm && 'desktop-button'">
+        <div class="q-mt-lg" align="right">
           <q-card class="bg-color" flat>
             <q-btn
               label="Back"
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -95,17 +95,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .stepper-top {
   padding-top: 15px;
 }
 .desktop-card {
-  max-width: 60vh;
+  max-width: 75vh;
 }
 .mobile-card {
-  max-width: 45vh;
+  max-width: 60vh;
 }
 .desktop-button {
-  padding-left: 40vh;
+  float: right;
 }
 </style>

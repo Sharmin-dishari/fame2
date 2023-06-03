@@ -8,15 +8,17 @@
       v-if="$q.screen.width > 1024"
       :class="$q.screen.width > 1680 ? 'q-gutter-x-xl' : 'q-gutter-x-md'"
     >
-      <q-card class="q-mt-xl card-size">
+      <q-card class="q-mt-xl card-size btnRound" flat>
         <q-card-section>
-          <div class="type-image">
+          <div class="type-image fixed_height">
+           <div class="">
             <img class="type-illustration car-image" src="type-1.svg" alt="" />
-            <img
-              class="type-bg light-image bg-image"
-              src="type-1-bg.svg"
-              alt=""
-            />
+              <img
+                class="type-bg light-image bg-image"
+                src="type-1-bg.svg"
+                alt=""
+              />
+           </div>
             <div class="my-class text-center q-pt-md">
               <div class="text-h6 text-weight-medium">Company</div>
               <div class="caption q-pt-md">
@@ -27,40 +29,44 @@
                 color="grey"
                 outline
                 @click="$emit('handle-next')"
-                class="full-width q-py-sm q-my-lg btnRound"
+                class="full-width q-my-lg btnRound"
               />
             </div>
           </div>
         </q-card-section>
       </q-card>
-      <q-card class="q-mt-xl card-size">
+      <q-card class="q-mt-xl card-size btnRound" flat>
         <div class="type-image">
+        <div class="fixed_height">
           <img class="type-illustration" src="type-2.svg" alt="" />
           <img class="type-bg light-image" src="type-2-bg.svg" alt="" />
+          </div>
         </div>
         <div class="text-center q-px-md">
-          <div class="text-h6 text-weight-medium q-pt-xs">Public Person</div>
+          <div class="text-h6 text-weight-medium q-pt-lg">Public Person</div>
           <div class="caption q-pt-md">
             Create a public account to be able to do some awesome things.
           </div>
         </div>
-        <div class="my-class q-mx-md q-my-sm text-center">
+        <div class="my-class q-mx-md text-center">
           <q-btn
             label="continue"
             color="grey"
             outline
             @click="$emit('handle-next')"
-            class="full-width q-py-sm q-my-lg btnRound"
+            class="full-width  q-my-lg btnRound"
           />
         </div>
       </q-card>
-      <q-card class="q-mt-xl q-px-md card-size">
+      <q-card class="q-mt-xl q-px-md card-size btnRound" flat>
         <div class="type-image">
+        <div class="fixed_height">
           <img class="type-illustration" src="type-3.svg" alt="" />
           <img class="type-bg light-image" src="type-3-bg.svg" alt="" />
+          </div>
         </div>
 
-        <div class="my-class q-px-md text-center">
+        <div class="my-class  text-center">
           <div class="image3 text-h6 text-weight-medium">Personal</div>
           <div class="caption q-pt-md">
             Create a personal account to be able to do some awesome things.
@@ -70,7 +76,7 @@
             color="grey"
             outline
             @click="$emit('handle-next')"
-            class="full-width q-py-sm q-my-lg btnRound"
+            class="full-width  q-my-lg btnRound"
           />
         </div>
       </q-card>
@@ -133,17 +139,20 @@ export default {};
   font-size: 1rem;
 }
 .image3 {
-  margin-top: 30px;
-}
-.card-size {
-  width: 35vh;
+  padding-top: 33px;
 }
 .car-image {
   width: 110%;
 }
+/* .card-size {
+  width: 35vh;
+} */
+.fixed-height{
+position: relative;
+}
 @media (width < 1780px) {
-  .card-size {
-    max-width: 30vh;
-  }
+  /* .card-size {
+    max-width: 45vh;
+  } */
 }
 </style>

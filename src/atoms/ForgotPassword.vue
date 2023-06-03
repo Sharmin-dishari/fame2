@@ -19,6 +19,12 @@
               v-model="loginId"
               class="q-pb-md"
               dense
+              label="Email"
+              clearable
+              :rules="[
+                (val) => !!val || 'Field is required',
+                (val) => validateEmail(val) || 'Type a valid Email',
+              ]"
               bg-color="white"
               placeholder="Enter your email address"
             />
@@ -51,6 +57,7 @@
 </template>
 
 <script>
+import { validateEmail } from "src/utils";
 export default {
   name: "LoginIndex",
 
@@ -64,6 +71,7 @@ export default {
     };
   },
   methods: {
+    validateEmail,
     handleLogin() {},
   },
 };

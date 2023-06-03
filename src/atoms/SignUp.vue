@@ -95,7 +95,7 @@ export default {
 </script>
 <style scoped>
 .stepper-top {
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 </style>
 <style lang="scss" scoped>

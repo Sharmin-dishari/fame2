@@ -73,12 +73,10 @@ export default {
 
 <style>
 .desktop-card {
-  max-width: 60vh;
+  max-width: 75vh;
 }
 .mobile-card {
   max-width: 45vh;
 }
-.desktop-button {
-  padding-left: 40vh;
-}
+
 </style>

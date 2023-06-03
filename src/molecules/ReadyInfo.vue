@@ -1,6 +1,7 @@
 <template>
   <div class="text-center">
-    <div>
+    <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
+      ">
       <div class="text-h5 text-center text-weight-medium q-pb-md">
         You're all set. Ready?
       </div>
@@ -9,7 +10,7 @@
           class="bg-white btnRound"
           flat
           :class="
-            $q.screen.lt.sm ? 'mobile-card q-pa-md' : 'desktop-card q-pa-xl'
+            $q.screen.lt.sm ? 'q-pa-md' : 'q-pa-xl'
           "
         >
           <q-card-section class="text-center">
@@ -68,7 +69,7 @@ export default {
   padding: 3px 85px;
 }
 .desktop-card {
-  max-width: 60vh;
+  max-width: 75vh;
 }
 .mobile-card {
   max-width: 45vh;
