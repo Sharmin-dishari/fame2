@@ -1,17 +1,17 @@
 <template>
   <div class="text-center">
-    <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
-      ">
-      <div class="text-h5 text-center text-weight-medium q-pb-md">
+    <div
+      style="margin: 0 auto"
+      :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'"
+    >
+      <div class="text-h6 text-weight-bold text-center text-grey-9 q-pb-md">
         You're all set. Ready?
       </div>
       <div align="center">
         <q-card
           class="bg-white btnRound"
           flat
-          :class="
-            $q.screen.lt.sm ? 'q-pa-md' : 'q-pa-xl'
-          "
+          :class="$q.screen.lt.sm ? 'q-pa-md' : 'q-px-lg q-py-md'"
         >
           <q-card-section class="text-center">
             <img
@@ -34,12 +34,13 @@
               within 24 hours.
             </div>
           </q-card-section>
-          <div class="q-mt-lg">
+          <div class="bg-white q-mt-lg">
             <q-btn
               label="Let me in"
-              outline
+              @click="$emit('handle-next')"
               :class="$q.screen.gt.sm ? 'button-width' : 'full-width'"
-              color="primary btnRound"
+              class="btnRound hover-btn q-mb-lg"
+              unelevated
             />
           </div>
         </q-card>
@@ -73,5 +74,9 @@ export default {
 }
 .mobile-card {
   max-width: 45vh;
+}
+.hover-btn:hover {
+  background: #1976d2;
+  color: white;
 }
 </style>

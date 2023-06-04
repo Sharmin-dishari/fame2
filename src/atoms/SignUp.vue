@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-color">
+  <q-page class="bg-color q-pa-none">
     <q-stepper
       v-model="step"
       ref="stepper"
@@ -7,7 +7,7 @@
       color="primary"
       :contracted="$q.screen.lt.md"
       alternative-labels
-      class="bg-color"
+      class="bg-color q-pa-none q-ma-none"
     >
       <q-step
         :name="1"
@@ -16,9 +16,9 @@
         done-icon="sentiment_satisfied"
       >
         <PersonalInfo
+          :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-sm'"
           v-if="step === 1"
           @handle-next="$refs.stepper.next()"
-          :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
         />
       </q-step>
 
@@ -32,7 +32,7 @@
       >
         <div v-if="step === 2" class="q-pa-none q-ma-none">
           <PublicInfo
-            :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
+            :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-sm'"
             @handle-next="$refs.stepper.next()"
             @handle-previous="$refs.stepper.previous()"
           />
@@ -41,19 +41,11 @@
 
       <q-step :name="3" :done="step > 3" icon="image" done-icon="image">
         <AccountInfo
-          :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
+          :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-sm'"
           @handle-next="$refs.stepper.next()"
           @handle-previous="$refs.stepper.previous()"
         />
       </q-step>
-
-      <!-- <q-step :name="4" :done="step > 4" icon="lock" done-icon="lock">
-        <SecurityInfo
-          :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
-          @handle-next="$refs.stepper.next()"
-          @handle-previous="$refs.stepper.previous()"
-        />
-      </q-step> -->
       <q-step :name="4" icon="flag" class="flag" done-icon="flag">
         <ReadyInfo
           :class="$q.screen.gt.sm ? 'stepper-top' : 'q-pt-md'"
@@ -62,11 +54,7 @@
         />
       </q-step>
 
-      <template v-slot:navigation>
-        <!-- <q-stepper-navigation>
-
-        </q-stepper-navigation> -->
-      </template>
+      <template v-slot:navigation> </template>
     </q-stepper>
   </q-page>
 </template>
@@ -95,7 +83,7 @@ export default {
 </script>
 <style scoped>
 .stepper-top {
-  margin-top: 5vh;
+  padding-top: 5vh;
 }
 </style>
 <style lang="scss" scoped>

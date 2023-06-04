@@ -1,18 +1,14 @@
 <template>
   <div>
-     <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
-       ">
-      <div class="text-h5 text-center text-weight-medium q-pb-md">
+    <div
+      style="margin: 0 auto"
+      :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'"
+    >
+      <div class="text-h6 text-weight-bold text-center text-grey-9 q-pb-md">
         Secure your account.
       </div>
       <div align="center">
-        <q-card
-          class="bg-white q-pa-xl btnRound q-mx-auto box"
-          flat
-          :class="
-            $q.screen.lt.sm ? 'q-pa-lg' : 'q-pa-xl'
-          "
-        >
+        <q-card class="bg-white q-pa-xl btnRound q-mx-auto box q-pa-md" flat>
           <div class="logo_bg"></div>
           <q-card-section style="padding-bottom: 120px">
             <form class="q-px-md">
@@ -32,7 +28,7 @@
                       name="add"
                       size="sm"
                       rounded
-                      class="bg-grey-5 text-white q-pa-xs cursor-pointer btn-hover add-icon"
+                      class="q-pa-xs cursor-pointer hover-btn add-icon"
                     />
                     <input
                       type="file"
@@ -49,7 +45,7 @@
           <div>Only images with a size lower than 3MB are allowed.</div>
         </q-card>
         <div class="q-mt-lg" align="right">
-          <q-card class="bg-color" flat>
+          <div class="row justify-end">
             <q-btn
               label="Back"
               color="white"
@@ -57,14 +53,15 @@
               @click="$emit('handle-previous')"
               class="text-black q-px-md q-py-xs btnRound q-mr-md"
             />
-            <q-btn
-              label="Submit"
-              color="white"
-              @click="$emit('handle-next')"
-              class="text-black q-px-md q-py-xs btnRound"
-              unelevated
-            />
-          </q-card>
+            <div class="bg-white btnRound">
+              <q-btn
+                label="Submit"
+                @click="$emit('handle-next')"
+                class="q-px-md q-py-xs btnRound hover-btn"
+                unelevated
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -98,8 +95,11 @@ export default {
   padding-right: 13px;
   padding-bottom: 20px;
 }
-.add-icon{
-border: 6px solid white; border-radius: 50%
+.add-icon {
+  border: 6px solid white;
+  border-radius: 50%;
+  background: rgb(210, 207, 207);
+  color: white;
 }
 .avatarSize {
   margin-top: -4px;
@@ -112,9 +112,6 @@ border: 6px solid white; border-radius: 50%
 
   position: relative;
 }
-.form-container .form-style:hover {
-  outline: 2px solid rgba(223, 223, 223, 0.651);
-}
 .uploader-position {
   margin-top: -150px;
   display: flex;
@@ -124,5 +121,14 @@ border: 6px solid white; border-radius: 50%
 }
 .saveBtn {
   border-radius: 20px;
+  background-color: white;
+  color: white;
+}
+.hover-btn::before {
+  background: grey;
+}
+.hover-btn:hover {
+  background: #1976d2;
+  color: white;
 }
 </style>

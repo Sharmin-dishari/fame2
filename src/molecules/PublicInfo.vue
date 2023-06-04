@@ -1,16 +1,17 @@
 <template>
-    <div> 
-    <div style="margin: 0 auto" :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'
-      ">
-      <div class="text-h5 text-center text-weight-medium q-pb-md">
+  <div>
+    <div
+      class="center-box"
+      :class="$q.screen.lt.sm ? 'mobile-card ' : 'desktop-card'"
+    >
+      <div class="text-h6 text-weight-bold text-center text-grey-9 q-pb-md">
         Tell us more about you.
       </div>
       <div class="">
         <q-card
-          class="bg-white btnRound "
+          class="bg-white btnRound"
           flat
-          :class="$q.screen.lt.sm ? 'q-pa-lg' : 'q-pa-xl'
-            "
+          :class="$q.screen.lt.sm ? 'q-pa-md' : 'q-px-lg q-py-md'"
         >
           <q-form>
             <q-input
@@ -58,7 +59,7 @@
           </q-form>
         </q-card>
         <div class="q-mt-lg" align="right">
-          <q-card class="bg-color" flat>
+          <div class="row justify-end">
             <q-btn
               label="Back"
               color="white"
@@ -66,18 +67,19 @@
               @click="$emit('handle-previous')"
               class="text-black q-px-md q-py-xs btnRound q-mr-md"
             />
-            <q-btn
-              label="Next"
-              color="white"
-              @click="$emit('handle-next')"
-              class="text-black q-px-md q-py-xs btnRound"
-              unelevated
-            />
-          </q-card>
+            <div class="bg-white btnRound">
+              <q-btn
+                label="Submit"
+                @click="$emit('handle-next')"
+                class="q-px-md q-py-xs btnRound hover-btn"
+                unelevated
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -107,5 +109,15 @@ export default {
 }
 .desktop-button {
   float: right;
+}
+.center-box {
+  margin: 0 auto;
+}
+.hover-btn::before {
+  background-color: white;
+}
+.hover-btn:hover {
+  background: #1976d2;
+  color: white;
 }
 </style>

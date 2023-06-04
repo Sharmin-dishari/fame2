@@ -4,7 +4,7 @@
       <q-toolbar class="nav-color">
         <q-toolbar-title class="text-center q-pt-xs q-pb-sm">
           <!-- Quasar App -->
-          <q-img src="friendkit-bold.svg" style="width: 65px" />
+          <q-img src="friendkit-bold.svg" style="max-width: 55px" />
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

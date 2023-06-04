@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-h5 text-center text-weight-medium q-pb-md">
+    <div class="text-h6 text-weight-bold text-center text-grey-9 q-pb-md">
       Welcome, select an account type.
     </div>
     <div
@@ -11,73 +11,81 @@
       <q-card class="q-mt-xl q-px-lg card-size btnRound" flat>
         <q-card-section>
           <div class="type-image fixed_height">
-           <div class="">
-            <img class="type-illustration car-image" src="type-1.svg" alt="" />
+            <div class="">
+              <img
+                class="type-illustration car-image"
+                src="type-1.svg"
+                alt=""
+              />
               <img
                 class="type-bg light-image bg-image"
                 src="type-1-bg.svg"
                 alt=""
               />
-           </div>
+            </div>
             <div class="my-class text-center q-pt-md">
               <div class="text-h6 text-weight-medium">Company</div>
               <div class="caption q-pt-md">
-                Create a company account to be able to <br> do some awesome things.
+                Create a company account to be able to <br />
+                do some awesome things.
               </div>
-              <q-btn
-                label="continue"
-                color="grey"
-                outline
-                @click="$emit('handle-next')"
-                class="full-width q-my-lg btnRound"
-              />
+              <div class="bg-white q-my-lg">
+                <q-btn
+                  label="continue"
+                  @click="$emit('handle-next')"
+                  class="btnRound full-width q-py-xs hover-btn"
+                  unelevated
+                />
+              </div>
             </div>
           </div>
         </q-card-section>
       </q-card>
       <q-card class="q-mt-xl card-size btnRound q-px-lg" flat>
         <div class="type-image">
-        <div class="fixed_height">
-          <img class="type-illustration" src="type-2.svg" alt="" />
-          <img class="type-bg light-image" src="type-2-bg.svg" alt="" />
+          <div class="fixed_height">
+            <img class="type-illustration" src="type-2.svg" alt="" />
+            <img class="type-bg light-image" src="type-2-bg.svg" alt="" />
           </div>
         </div>
         <div class="text-center q-px-md">
           <div class="text-h6 text-weight-medium q-mt-sm">Public Person</div>
           <div class="caption q-pt-md">
-            Create a public account to be able to do <br> some awesome things.
+            Create a public account to be able to do <br />
+            some awesome things.
           </div>
         </div>
-        <div class="my-class q-mx-md text-center">
+        <div class="bg-white q-my-lg">
           <q-btn
             label="continue"
-            color="grey"
-            outline
             @click="$emit('handle-next')"
-            class="full-width  q-my-lg btnRound"
+            class="btnRound full-width q-py-xs hover-btn"
+            unelevated
           />
         </div>
       </q-card>
       <q-card class="q-mt-xl q-px-md card-size btnRound q-px-lg" flat>
         <div class="type-image">
-        <div class="fixed_height">
-          <img class="type-illustration" src="type-3.svg" alt="" />
-          <img class="type-bg light-image" src="type-3-bg.svg" alt="" />
+          <div class="fixed_height">
+            <img class="type-illustration" src="type-3.svg" alt="" />
+            <img class="type-bg light-image" src="type-3-bg.svg" alt="" />
           </div>
         </div>
 
-        <div class="my-class  text-center">
+        <div class="my-class text-center">
           <div class="image3 text-h6 text-weight-medium">Personal</div>
           <div class="caption q-pt-md">
-            Create a personal account to be able to <br> do some awesome things.
+            Create a personal account to be able to <br />
+            do some awesome things.
           </div>
-          <q-btn
-            label="continue"
-            color="grey"
-            outline
-            @click="$emit('handle-next')"
-            class="full-width  q-my-lg btnRound"
-          />
+          <div class="bg-white q-my-lg">
+            <q-btn
+              label="continue"
+              @click="$emit('handle-next')"
+              class="btnRound full-width q-py-xs hover-btn"
+              unelevated
+            />
+          </div>
         </div>
       </q-card>
     </div>
@@ -145,8 +153,8 @@ export default {};
   width: 110%;
 }
 
-.fixed-height{
-position: relative;
+.hover-btn:hover {
+  background: #1976d2;
+  color: white;
 }
-
 </style>
